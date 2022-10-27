@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Netflix DB
+
+A small web app clone and amalgamation of Netflix and IMDB, built with [React.js](https://reactjs.org)
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
