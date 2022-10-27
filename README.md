@@ -1,6 +1,6 @@
 # Netflix DB
 
-A small web app clone and amalgamation of Netflix and IMDB, built with [React.js](https://reactjs.org)
+A small web app clone and amalgamation of Netflix and IMDB, built with [React.js](https://reactjs.org) and [OMDb API](http://www.omdbapi.com/).
 
 ---
 
