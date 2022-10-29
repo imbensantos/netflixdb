@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components"
+import { css } from "styled-components"
 
-export default createGlobalStyle`
+export default css`
 
 	/* Remove default margin */
 	html, body, div, span, applet, object, iframe,
@@ -71,6 +71,7 @@ export default createGlobalStyle`
 	/* Create a root stacking context */
 	#root, #__next {
 		isolation: isolate;
+		overflow: auto;
 	}
 
 	/* Remove list styles on ul, ol elements without a list role. Assign a list role if you want to retain default styling*/
