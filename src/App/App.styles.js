@@ -1,11 +1,12 @@
 // Packages
 import styled, {createGlobalStyle} from "styled-components"
 
-import Reset from "../Styles/Reset";
-import Fonts from "../Styles/Fonts";
+// Styles
+import styles from '../Styles'
+const {reset, Fonts, breakpoints: {media, sizes}} = styles
 
 const GlobalStyles = createGlobalStyle`
-	${Reset}
+	${reset}
 	
 	#root{
 		background: #161616;
@@ -13,22 +14,39 @@ const GlobalStyles = createGlobalStyle`
 `
 
 const AppName = styled.h1`
-	font-size: 2rem;
-	font-weight: 900;
-	text-align: center;
-	margin-block: 1em;
 	color: #A51327;
 	font-family: 'Montserrat', sans-serif;
+	font-size: 2rem;
+	font-weight: 900;
+	margin-block: 1em;
+	position: relative;
+	text-align: center;
 	span{
 		color: #fff;
 	}
+	&:before, &:after{
+		content: '';
+		background: #7f4c00;
+		height: 5px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 40%;
+	}
+	&:before{
+		left: 0;
+	}
+	&:after{
+		right: 0;
+	}
 `
 const Main = styled.main`
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	display: flex;
+	flex-flow: row wrap;
 	justify-items: center;
+	justify-content: center;
 	grid-gap: 2em 1em;
-	margin: 2.5em;
+	margin: 5em 2.5em;
 `
 
 const $ = {

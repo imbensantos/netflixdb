@@ -1,9 +1,9 @@
 // Packages
 import styled from "styled-components"
 
+// Styles
 import styles from "../../Styles"
-
-const {getRGB} = styles.color
+const {color: {getRGB}, breakpoints: {media}} = styles
 
 // Styles
 const Container = styled.article`
@@ -39,6 +39,11 @@ const Date = styled.p`
 	text-align: left;
 	margin-block: 1em;
 	font-size: 0.8rem;
+
+	${Container}:hover &{
+		color: #fff;
+		font-family: 'Work Sans'
+	}
 `
 const Image = styled.img`
 	margin-inline: auto;

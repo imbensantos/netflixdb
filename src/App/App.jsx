@@ -5,6 +5,7 @@ import React, { useState, useCallback } from "react"
 import $ from "./App.styles.js"
 
 // Components
+import Spinner from "../components/Spinner"
 import Searchbar from "../components/Searchbar"
 import Movie from "../components/Movie"
 
@@ -13,10 +14,10 @@ const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=8f5525d1"
 
 function App() {
 	const [searchResults, setSearchResults] = useState([])
+	const [isLoading, setIsLoading] = useState(false)
 
-	let movies
 	const hasResults = searchResults?.length > 0
-	movies = hasResults ? searchResults.map(movieData => <Movie key={movieData.imdbID} data={movieData} />) : null
+	const movies = hasResults ? searchResults.map(movieData => <Movie key={movieData.imdbID} data={movieData} />) : null
 
 	/**
 	 * We need to wrap this in a useCallback because otherwise it will keep
@@ -28,18 +29,24 @@ function App() {
 	 * So wrap this in a useCallback to avoid unending loops.
 	 */
 	const handleSearch = useCallback(async (title) => {
+		setIsLoading(true);
 		const response = await fetch(`${API_URL}&s=${title}`)
 		const data = await response.json()
-		setSearchResults(data.Search)
+
+		if(data){
+			setIsLoading(false);
+			setSearchResults(data.Search)
+		}
 	}, [])
 
 	return (
 		<>
 			<$.GlobalStyles />
 			<$.Fonts />
+
 			<$.AppName>Movie<span>DB</span></$.AppName>
 			<Searchbar onSearch={handleSearch} />
-			<$.Main>{movies}</$.Main>
+			<$.Main>{isLoading ? <Spinner /> : movies}</$.Main>
 		</>
 	)
 }

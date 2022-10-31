@@ -4,6 +4,10 @@ import styled from "styled-components"
 // Components
 import { BsSearch } from "react-icons/bs"
 
+// Styles
+import styles from '../../Styles'
+const {breakpoints: {media, sizes}} = styles
+
 const Container = styled.div`
 	background: #E9E9E9;
 	border: 1px solid #A1A6A7;
@@ -19,6 +23,15 @@ const Container = styled.div`
 
 	&:focus-within {
 		background: #fff;
+	}
+
+	${media.tablet}{
+		max-width: 50%;
+	}
+
+	${media.desktop}{
+		max-width: ${sizes.laptopL};
+		margin-inline: auto;
 	}
 `
 
