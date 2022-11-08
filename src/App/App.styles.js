@@ -15,6 +15,7 @@ const GlobalStyles = createGlobalStyle`
 
 const AppName = styled.h1`
 	color: #A51327;
+	cursor: pointer;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 2rem;
 	font-weight: 900;
@@ -24,6 +25,7 @@ const AppName = styled.h1`
 	span{
 		color: #fff;
 	}
+/* 	// May use again in the future.
 	&:before, &:after{
 		content: '';
 		background: #7f4c00;
@@ -38,7 +40,7 @@ const AppName = styled.h1`
 	}
 	&:after{
 		right: 0;
-	}
+	} */
 `
 const Main = styled.main`
 	display: flex;
@@ -48,12 +50,18 @@ const Main = styled.main`
 	grid-gap: 2em 1em;
 	margin: 5em 2.5em;
 `
+const Empty = styled(Main)`
+	color: #fff;
+	font-family: 'Work Sans';
+	font-size: 1.5rem;
+`
 
 const $ = {
 	Fonts,
 	GlobalStyles,
 	AppName,
 	Main,
+	Empty
 }
 
 export default $

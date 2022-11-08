@@ -15,7 +15,8 @@ const Container = styled.div`
 	color: #000;
 	display: flex;
 	justify-content: space-between;
-	max-width: 80%;
+	width: max(50%, 250px);
+	max-width: ${sizes.laptop};
 	margin-inline: auto;
 	padding: .5em 1em;
 	transition: all ease .15s;
@@ -23,15 +24,6 @@ const Container = styled.div`
 
 	&:focus-within {
 		background: #fff;
-	}
-
-	${media.tablet}{
-		max-width: 50%;
-	}
-
-	${media.desktop}{
-		max-width: ${sizes.laptopL};
-		margin-inline: auto;
 	}
 `
 

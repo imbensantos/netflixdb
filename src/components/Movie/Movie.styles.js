@@ -38,7 +38,7 @@ const Overlay = styled.div`
 const Date = styled.p`
 	text-align: left;
 	margin-block: 1em;
-	font-size: 0.8rem;
+	font-size: 1rem;
 
 	${Container}:hover &{
 		color: #fff;
@@ -57,12 +57,13 @@ const Details = styled.section`
 	right: 0;
 	bottom: 0;
 	z-index: 2;
-	padding: .5em;
+	padding-inline: 1em;
+	padding-block: 1em;
 	background: #14282D;
 	transition: all 0.1s ease;
 
 	${Container}:hover & {
-		background: none;
+		background: rgba(${getRGB("#14282D")}, 0.75);;
 	}
 `
 const Category = styled.span`
@@ -73,10 +74,10 @@ const Category = styled.span`
 `
 const Name = styled.h3`
 	font-weight: 600;
-	margin-top: 0.25em;
+	margin-top: 0.5em;
 	font-size: 1.2rem;
 	transition: all 0.1s ease;
-	color: #A24451;
+	color: #973a3e;
 	font-family: 'Montserrat';
 `
 

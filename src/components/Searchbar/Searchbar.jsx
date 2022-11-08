@@ -12,6 +12,10 @@ function Searchbar({className, onSearch}) {
 		setInput(value)
 	}
 
+	function handleClick(){
+		onSearch(input)
+	}
+
 	/**
 	 * We place the API call (onSearch) inside a useEffect because
 	 * we need to clear the timer after. Otherwise, the timers will overlap.
@@ -33,7 +37,7 @@ function Searchbar({className, onSearch}) {
 	return (
 		<$.Container className={className}>
 			<$.Input onInput={handleInput} value={input} type="text" placeholder="Search for movies" />
-			<$.Icon onClick={() => {}} />
+			<$.Icon onClick={handleClick} />
 		</$.Container>
 	)
 }
