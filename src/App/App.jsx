@@ -28,6 +28,9 @@ function App() {
 	const handleClick = () => {
 		setSearchResults([])
 		setIsInputEmpty(true)
+		/**
+		 * TODO: Add search reset when home is clicked
+		 */
 	}
 
 	/**
